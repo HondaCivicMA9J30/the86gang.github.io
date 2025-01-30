@@ -3,34 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enviar tu coche</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <title>Enviar Coche - The 86 Gang</title>
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-    <header>
-        <div class="banner">
-            <h1>Enviar tu coche</h1>
-        </div>
-    </header>
-
-    <section id="submit-car">
-        <h2>Comparte tu coche con la comunidad</h2>
-        <form action="/submit" method="POST" enctype="multipart/form-data">
+    <!-- Formulario para enviar coche -->
+    <section id="car-form">
+        <h2>Envía tu coche</h2>
+        <form action="submit" method="POST">
             <label for="car-name">Nombre del coche:</label>
-            <input type="text" id="car-name" name="car-name" required><br><br>
+            <input type="text" id="car-name" name="car-name" required>
+            
+            <label for="car-image">Sube una imagen del coche:</label>
+            <input type="file" id="car-image" name="car-image" accept="image/*" required>
 
-            <label for="car-image">Imagen del coche:</label>
-            <input type="file" id="car-image" name="car-image" required><br><br>
+            <label for="car-description">Descripción:</label>
+            <textarea id="car-description" name="car-description" rows="4" required></textarea>
 
-            <label for="car-description">Descripción del coche:</label><br>
-            <textarea id="car-description" name="car-description" rows="4" cols="50" required></textarea><br><br>
-
-            <input type="submit" value="Enviar Coche">
+            <button type="submit">Enviar coche</button>
         </form>
+    </section>
+
+    <!-- Mostrar coches enviados -->
+    <section id="submitted-cars">
+        <h2>Coches Enviados</h2>
+        <div id="car-gallery">
+            <!-- Aquí se mostrarán las imágenes y detalles de los coches enviados -->
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2025 The 86 Gang. Todos los derechos reservados.</p>
+        <p><a href="contacto.html">Contacto</a></p>
     </footer>
+
+    <script src="assets/scripts.js"></script>
 </body>
 </html>
