@@ -1,82 +1,85 @@
+/* Estilos generales */
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Estilos del banner */
+header .banner {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+header .banner h1 {
     margin: 0;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
+/* Estilos de las secciones */
 section {
     padding: 20px;
-    margin: 20px 0;
+    margin: 20px;
 }
 
-.car-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+section h2 {
+    font-size: 24px;
 }
 
-.car-gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+section p {
+    font-size: 16px;
 }
 
-.car-gallery img:hover {
-    transform: scale(1.05);
+/* Estilos para la lista de redes sociales */
+#socials ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.social-icons a {
-    margin: 0 15px;
+#socials ul li {
+    margin: 10px 0;
 }
 
-.social-icons img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
+#socials ul li a {
+    text-decoration: none;
+    color: #333;
 }
 
-.social-icons img:hover {
-    transform: scale(1.1);
+#socials ul li a:hover {
+    color: #007bff;
 }
 
-@media (max-width: 768px) {
-    nav ul {
-        display: block;
-    }
-    nav ul li {
-        margin: 10px 0;
-    }
+/* Estilos para el formulario de enviar coche */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
 
-    .car-gallery {
-        grid-template-columns: 1fr;
-    }
+form input, form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+}
 
-    .social-icons a {
-        margin: 0 10px;
-    }
+form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
 }

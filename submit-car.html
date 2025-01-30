@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar tu coche</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <h1>Enviar tu coche</h1>
+        </div>
+    </header>
+
+    <section id="submit-car">
+        <h2>Comparte tu coche con la comunidad</h2>
+        <form action="/submit" method="POST" enctype="multipart/form-data">
+            <label for="car-name">Nombre del coche:</label>
+            <input type="text" id="car-name" name="car-name" required><br><br>
+
+            <label for="car-image">Imagen del coche:</label>
+            <input type="file" id="car-image" name="car-image" required><br><br>
+
+            <label for="car-description">Descripción del coche:</label><br>
+            <textarea id="car-description" name="car-description" rows="4" cols="50" required></textarea><br><br>
+
+            <input type="submit" value="Enviar Coche">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 The 86 Gang. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
