@@ -67,3 +67,85 @@ footer {
     margin-top: 20px; /* Añade margen al footer */
     flex-shrink: 0; /* Evita que el pie de página se mueva si hay mucho contenido */
 }
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.car-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.car-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.car-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.social-icons a {
+    margin: 0 15px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: block;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .car-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .social-icons a {
+        margin: 0 10px;
+    }
+}
