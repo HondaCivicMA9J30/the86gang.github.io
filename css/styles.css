@@ -1,68 +1,113 @@
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
+/* Reset de márgenes y padding */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
 }
 
+/* Fondo general y fuente */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Encabezado y banner */
 header {
-    position: relative;
+    background-image: url('assets/images/fotoban.png');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
     text-align: center;
-}
-
-.banner {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
-}
-
-.intro-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: white;
 }
 
-h1 {
+header h1 {
     font-size: 3rem;
-    margin-bottom: 0;
+    font-weight: bold;
 }
 
-p {
+header p {
     font-size: 1.2rem;
+    margin-top: 10px;
 }
 
-/* Estilo para las secciones */
-section {
-    padding: 20px;
+/* Contenedor de las redes sociales */
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.social-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+/* Sección de coches de la comunidad */
+.cars-section {
+    background-color: #ffffff;
+    padding: 40px;
     margin: 20px;
-    background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#socials a {
-    margin-right: 15px;
-    color: #1d72b8;
-    text-decoration: none;
+.cars-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
-#socials a:hover {
-    text-decoration: underline;
+.cars-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
-#car-form {
-    width: 40%;
-    margin: 0 auto;
-    background-color: #e2e2e2;
+.car-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    text-align: center;
+}
+
+.car-item img {
+    width: 100%;
     border-radius: 8px;
 }
 
-#car-form input, #car-form textarea {
+.car-item h3 {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.car-item p {
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Formulario de coches */
+form {
+    position: fixed;
+    top: 20%;
+    right: 10px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+form input, form textarea, form button {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -70,44 +115,30 @@ section {
     border: 1px solid #ddd;
 }
 
-#car-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #1d72b8;
+form button {
+    background-color: #007bff;
     color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
+    font-weight: bold;
     cursor: pointer;
 }
 
-#car-form button:hover {
-    background-color: #155a8a;
-}
-
-#submitted-cars {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 20px;
-}
-
-#submitted-cars img {
-    width: 100%;
-    border-radius: 8px;
+form button:hover {
+    background-color: #0056b3;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 10px;
     background-color: #333;
     color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
 }
 
 footer a {
     color: white;
     text-decoration: none;
+    font-size: 1.1rem;
 }
 
 footer a:hover {
