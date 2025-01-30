@@ -55,17 +55,15 @@ body {
 /* El contenido principal debe ocupar todo el espacio disponible */
 main {
     flex-grow: 1;
-    padding-bottom: 50px; /* Esto asegura que no haya solapamiento con el footer */
+    padding-bottom: 50px; /* Añade espacio en la parte inferior para que el footer no se solape */
 }
 
-/* Footer con un poco más de espacio */
+/* Footer al final, pero que se mueva si hay contenido */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    margin-top: 20px; /* Añade margen al footer para que no esté justo debajo del contenido */
-    position: sticky;
-    bottom: 0;
-    width: 100%;
+    margin-top: 20px; /* Añade margen al footer */
+    flex-shrink: 0; /* Evita que el pie de página se mueva si hay mucho contenido */
 }
