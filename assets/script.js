@@ -1,6 +1,6 @@
 // Agregar funciones aquí si es necesario, por ejemplo para subir y mostrar coches
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('form');
+    const form = document.getElementById('car-form');
     if (form) {
         form.addEventListener('submit', function (event) {
             event.preventDefault();
