@@ -8,14 +8,14 @@
 /* Fondo de la página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #333; /* Fondo gris */
+    color: #fff; /* Texto blanco */
     line-height: 1.6;
 }
 
 /* Encabezado */
 header {
-    background-image: url('../images/fotoban.jpg');
+    background-image: url('../assets/images/fotoban.png');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -34,13 +34,13 @@ header p {
 
 /* Menú de navegación */
 nav {
-    background-color: #333;
+    background-color: #444; /* Fondo gris oscuro para el menú de navegación */
     padding: 10px;
     text-align: center;
 }
 
 nav a {
-    color: #fff;
+    color: #fff; /* Texto blanco para los enlaces */
     text-decoration: none;
     margin: 0 15px;
     font-size: 1.1rem;
@@ -53,103 +53,41 @@ nav a:hover {
 /* Sección principal */
 main {
     width: 90%;
-    max-width: 1200px;
-    margin: 30px auto;
+    margin: 20px auto;
+    background-color: #fff; /* Fondo blanco para las secciones principales */
+    color: #333; /* Texto gris oscuro */
     padding: 20px;
-}
-
-/* Cuadro de coches */
-.coches-box {
-    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para las cajas de coches */
+.coches-box, .car-gallery {
+    background-color: #fff; /* Fondo blanco para las cajas de coches */
+    color: #333; /* Texto gris oscuro */
     padding: 20px;
-    margin-bottom: 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
-.coches-box h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.coches-box p {
-    font-size: 1rem;
+.car-item {
+    background-color: #fff; /* Fondo blanco para cada coche */
+    color: #333; /* Texto gris oscuro */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     margin-bottom: 10px;
 }
 
-.coches-box button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.coches-box button a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.coches-box button:hover {
-    background-color: #555;
-}
-
-/* Sección redes sociales */
-.social-links {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 40px;
-}
-
-.social-links a {
-    background-color: #333;
-    color: #fff;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s;
-}
-
-.social-links a:hover {
-    background-color: #555;
-}
-
-/* Soporte */
-#soporte {
-    background-color: #fff;
-    padding: 20px;
+.car-item img {
+    max-width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#soporte h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+.car-item h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-footer p {
-    margin: 10px 0;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
+.car-item p {
+    font-size: 1rem;
 }
