@@ -21,6 +21,14 @@ document.addEventListener('DOMContentLoaded', function () {
             carInfo.innerHTML = `<h3>${carName}</h3><p>${carDescription}</p>`;
             newCar.appendChild(carInfo);
 
+            // Crear botón de eliminación
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Eliminar';
+            deleteButton.addEventListener('click', function () {
+                carGallery.removeChild(newCar);
+            });
+            newCar.appendChild(deleteButton);
+
             carGallery.appendChild(newCar);
 
             form.reset();
