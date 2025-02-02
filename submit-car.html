@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviar Coche - The 86 Gang</title>
     <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+        import { getStorage } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js";
+        
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCGSY-CKYrlV_ukEtMs9pqMj4uIAbIb2lo",
+            authDomain: "the-86-gang.firebaseapp.com",
+            databaseURL: "https://the-86-gang-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "the-86-gang",
+            storageBucket: "the-86-gang.appspot.com",
+            messagingSenderId: "420976488314",
+            appId: "1:420976488314:web:34570c0b3a8baaf55cb0c3",
+            measurementId: "G-H50V831HW4"
+        };
+
+        // Inicializa Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const storage = getStorage(app);
+    </script>
 </head>
 <body>
     <!-- Formulario para enviar coche -->
@@ -37,6 +61,6 @@
         <p><a href="contacto.html">Contacto</a></p>
     </footer>
 
-    <script type="module" src="assets/script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
