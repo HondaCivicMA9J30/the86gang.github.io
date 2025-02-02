@@ -1,4 +1,7 @@
 // Agregar funciones aquí si es necesario, por ejemplo para subir y mostrar coches
+import { database } from './firebaseConfig.js';
+import { ref, set, onValue, remove, push } from "firebase/database";
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('car-form');
     const carGallery = document.getElementById('car-gallery');
@@ -9,26 +12,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     const userId = localStorage.getItem('userId');
 
-    // Función para cargar coches desde localStorage
+    // Función para cargar coches desde Firebase
     function loadCars() {
-        const cars = JSON.parse(localStorage.getItem('cars')) || [];
-        cars.forEach(car => {
-            addCarToGallery(car.name, car.image, car.description, car.userId, car.id);
+        const carsRef = ref(database, 'cars');
+        onValue(carsRef, (snapshot) => {
+            carGallery.innerHTML = ''; // Limpiar la galería antes de cargar los coches
+            const cars = snapshot.val();
+            for (let id in cars) {
+                const car = cars[id];
+                addCarToGallery(car.name, car.image, car.description, car.userId, id);
+            }
         });
     }
 
-    // Función para guardar coches en localStorage
-    function saveCars() {
-        const cars = [];
-        carGallery.querySelectorAll('.car-item').forEach(carItem => {
-            const carName = carItem.querySelector('h3').textContent;
-            const carImage = carItem.querySelector('img').src;
-            const carDescription = carItem.querySelector('p').textContent;
-            const carUserId = carItem.getAttribute('data-user-id');
-            const carId = carItem.getAttribute('data-id');
-            cars.push({ name: carName, image: carImage, description: carDescription, userId: carUserId, id: carId });
-        });
-        localStorage.setItem('cars', JSON.stringify(cars));
+    // Función para guardar un coche en Firebase
+    function saveCar(car) {
+        const newCarRef = push(ref(database, 'cars'));
+        set(newCarRef, car);
     }
 
     // Función para agregar un coche a la galería
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
             deleteButton.textContent = 'Eliminar';
             deleteButton.addEventListener('click', function () {
                 carGallery.removeChild(newCar);
-                saveCars();
+                remove(ref(database, 'cars/' + carId));
             });
             newCar.appendChild(deleteButton);
         }
@@ -75,8 +75,15 @@ document.addEventListener('DOMContentLoaded', function () {
             const reader = new FileReader();
             reader.onload = function (e) {
                 const carImageSrc = e.target.result;
+                const car = {
+                    name: carName,
+                    image: carImageSrc,
+                    description: carDescription,
+                    userId: userId,
+                    id: carId
+                };
                 addCarToGallery(carName, carImageSrc, carDescription, userId, carId);
-                saveCars();
+                saveCar(car);
                 form.reset();
             };
             reader.readAsDataURL(carImage);
